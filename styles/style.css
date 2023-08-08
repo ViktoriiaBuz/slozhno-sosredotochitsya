@@ -16,8 +16,6 @@
   margin-block-end: 50px;
 }
 
-/*HEADER*/
-
 .header {
   padding: 10px;
   inline-size: 100%;
@@ -40,7 +38,16 @@
 }
 
 .pseudo-element::after {
-  /*КАК СДЕЛАТЬ КРУГ????????????????*/
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 4px;
+  background-color: var(--accent-color, #ff0070);
+  filter: drop-shadow(0px 0px 4px var(--accent-color, #ff0070));
+  right: 20px;
+  top: 20px;
+  z-index: 1;
 }
 
 .header::before {
@@ -81,6 +88,11 @@
   padding: 0 13px;
 }
 
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--accent-color, #ff0070);
+}
+
 .header__theme-menu-button {
   background-color: transparent;
   color: var(--accent-color, #ff0070);
@@ -116,10 +128,8 @@
   block-size: auto;
 }
 
-/*SECTIONS*/
-
 .section__title {
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-color-subtitle, #ff0070);
   line-height: 130%;
   font-size: 18px;
   margin-block-end: 20px;
@@ -146,6 +156,10 @@
   margin-block-end: 20px;
 }
 
+.section__what-deduce-block {
+  margin-block-end: 20px;
+}
+
 .section__link {
   text-decoration-line: none;
   text-shadow: 2px 1px 0 var(--accent-color, #ff0070);
@@ -167,8 +181,12 @@
   font-weight: var(--main-font);
 }
 
-.how-to-section h3:nth-child(2) {
+.section__subtitle {
   margin-block-end: 20px;
+}
+
+.section-img.section__subtitle {
+  margin-block-end: 10px;
 }
 
 .section__img {
@@ -218,6 +236,11 @@
     top: 21px;
   }
 
+  .pseudo-element::after {
+    right: 30px;
+    top: 30px;
+  }
+
   .header::before {
     right: 20px;
     top: 20px;
@@ -229,7 +252,7 @@
   }
 
   .header {
-    padding: 20px;
+    padding: 20px 20px 20px 0;
     min-block-size: 1024px;
     margin-block-end: 8%;
     grid-template-rows: 45% 10% 45%;
@@ -260,7 +283,7 @@
   }
 
   .section__title {
-    max-width: 30%;
+    max-width: 236px;
   }
 
   .section__img {
@@ -296,7 +319,71 @@
     grid-row: 3 / 4;
     grid-column: 2 / 4;
   }
+
+  .footer {
+    padding-block-start: 58%;
+    padding-block-end: 60%;
+  }
+
+  .footer::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .footer::after {
+    left: 20px;
+    bottom: 20px;
+  }
 }
 
 @media (min-width: 1024px) {
+  .header {
+    min-block-size: 768px;
+    margin-block-end: 6%;
+    grid-template-rows: 40% 20% 40%;
+  }
+
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .header__description-block {
+    min-inline-size: 49%;
+  }
+
+  .header__description {
+    padding: 0;
+  }
+
+  .section:nth-child(odd) {
+    grid-template-columns: 34% 66%;
+  }
+
+  .section__title {
+    max-width: 315px;
+  }
+
+  .section__what-reduce {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .footer {
+    block-size: 100dvb;
+    display: grid;
+    align-self: center;
+    justify-self: center;
+    /*padding-block-start: 30%;
+    padding-block-end: 31%;*/
+  }
 }
