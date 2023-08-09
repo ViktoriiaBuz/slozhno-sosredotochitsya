@@ -80,20 +80,13 @@
 
 .header__theme-menu-list {
   list-style-type: none;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 13px;
 }
 
-.header__theme-menu-item {
-  padding: 0 13px;
-}
-
-.header__theme-menu-button_active {
-  pointer-events: none;
-  border: 1px solid var(--accent-color, #ff0070);
-}
-
 .header__theme-menu-button {
+  padding: 1px 13px;
   background-color: transparent;
   color: var(--accent-color, #ff0070);
   border: none;
@@ -161,12 +154,12 @@
 }
 
 .section__link {
-  text-decoration-line: none;
+  text-decoration-color: transparent;
   text-shadow: 2px 1px 0 var(--accent-color, #ff0070);
 }
 
 .section__link:hover {
-  text-decoration-color: var(--color-text, #f1b2ce); /*НЕ РАБОТАЕТ?!?!*/
+  text-decoration-color: var(--color-text, #f1b2ce);
 }
 
 .section__link:focus {
@@ -185,14 +178,13 @@
   margin-block-end: 20px;
 }
 
-.section-img.section__subtitle {
+.section-img .section__subtitle {
   margin-block-end: 10px;
 }
 
 .section__img {
   display: grid;
   gap: 10px;
-  max-inline-size: calc(100vh - 20px);
 }
 
 .section__img img {
@@ -200,9 +192,9 @@
 }
 
 .footer {
-  text-align: center;
-  padding-block-start: 75%;
-  padding-block-end: 70%;
+  display: grid;
+  place-items: center;
+  block-size: 100vh;
   position: relative;
 }
 
@@ -252,7 +244,7 @@
   }
 
   .header {
-    padding: 20px 20px 20px 0;
+    padding: 20px;
     min-block-size: 1024px;
     margin-block-end: 8%;
     grid-template-rows: 45% 10% 45%;
@@ -285,6 +277,10 @@
   .section__title {
     max-width: 236px;
   }
+
+  .section-img .section__subtitle {
+    margin-block-end: 20px;
+  }  
 
   .section__img {
     gap: 20px;
@@ -320,11 +316,6 @@
     grid-column: 2 / 4;
   }
 
-  .footer {
-    padding-block-start: 58%;
-    padding-block-end: 60%;
-  }
-
   .footer::before {
     right: 20px;
     top: 20px;
@@ -353,7 +344,7 @@
   }
 
   .header__theme-menu-list {
-    grid-template-columns: 1fr 1fr 1fr;
+    flex-direction: row;
   }
 
   .header__description-block {
@@ -372,18 +363,14 @@
     max-width: 315px;
   }
 
+  .section__what-deduce-block {
+    margin-block-end: 0;
+}
+
   .section__what-reduce {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
 
-  .footer {
-    block-size: 100dvb;
-    display: grid;
-    align-self: center;
-    justify-self: center;
-    /*padding-block-start: 30%;
-    padding-block-end: 31%;*/
-  }
 }

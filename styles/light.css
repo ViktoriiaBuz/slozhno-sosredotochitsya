@@ -4,15 +4,13 @@
   переключая тему
 */
 
-.page.theme_light {
-  background-image: url(../images/cover-image-light.png);
-  /* сохраните этот селектор в приведённом виде.
+/* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-}
 
 .page.theme_light {
+  background-image: url(../images/cover-image-light.png);
   --bg-color: #fff1f7;
   --accent-title-color: #ffc2e6;
   --title-color: #353430;
@@ -40,7 +38,6 @@
 
 /* Остальные стили */
 
-
 .theme_light .pseudo-element {
   display: none;
 }
@@ -55,7 +52,7 @@
 }
 
 .theme_light .header__theme-menu-button:hover {
-  outline: 1px solid rgba(50, 49, 45, 0.40);
+  outline: 1px solid rgba(50, 49, 45, 0.4);
 }
 
 .theme_light .header__theme-menu-button:focus {
@@ -75,8 +72,6 @@
   border-block-end: 1px solid var(--title-color, #353430);
   border-inline-start: 1px solid var(--title-color, #353430);
 }
-
-
 
 .theme_light .footer::before {
   border-block-start: 1px solid var(--title-color, #353430);
