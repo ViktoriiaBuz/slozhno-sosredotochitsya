@@ -50,7 +50,7 @@
   z-index: 1;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   border-block-start: 1px solid var(--accent-color, #ff0070);
@@ -62,7 +62,7 @@
   z-index: 1;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   border-block-end: 1px solid var(--accent-color, #ff0070);
@@ -154,12 +154,12 @@
 }
 
 .section__link {
-  text-decoration-color: transparent;
+  text-decoration: none;
   text-shadow: 2px 1px 0 var(--accent-color, #ff0070);
 }
 
 .section__link:hover {
-  text-decoration-color: var(--color-text, #f1b2ce);
+  border-bottom: 1px solid var(--color-text, #f1b2ce);
 }
 
 .section__link:focus {
@@ -192,34 +192,19 @@
 }
 
 .footer {
+  max-block-size: 667px;
   display: grid;
   place-items: center;
   block-size: 100vh;
   position: relative;
 }
 
-.footer::before {
-  content: "";
-  position: absolute;
-  border-block-start: 1px solid var(--accent-color, #ff0070);
-  border-inline-end: 1px solid var(--accent-color, #ff0070);
-  inline-size: 25px;
-  block-size: 25px;
-  right: 10px;
-  top: 10px;
-  z-index: 1;
-}
-
-.footer::after {
-  content: "";
-  position: absolute;
-  border-block-end: 1px solid var(--accent-color, #ff0070);
-  border-inline-start: 1px solid var(--accent-color, #ff0070);
-  inline-size: 25px;
-  block-size: 25px;
-  left: 10px;
-  bottom: 10px;
-  z-index: 1;
+.footer__title {
+  color: var(--accent-title-color, #db00ff);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+  line-height: 82.5%;
+  font-weight: var(--accent-font, 700);
 }
 
 @media (min-width: 768px) {
@@ -233,12 +218,12 @@
     top: 30px;
   }
 
-  .header::before {
+  .decorated-zone::before {
     right: 20px;
     top: 20px;
   }
 
-  .header::after {
+  .decorated-zone::after {
     left: 20px;
     bottom: 20px;
   }
@@ -256,6 +241,8 @@
 
   .header__title {
     justify-self: start;
+    position: relative;
+    left: -20px;
   }
 
   .header__description-block {
@@ -316,15 +303,10 @@
     grid-column: 2 / 4;
   }
 
-  .footer::before {
-    right: 20px;
-    top: 20px;
+  .footer {
+    max-block-size: 1024px;
   }
-
-  .footer::after {
-    left: 20px;
-    bottom: 20px;
-  }
+  
 }
 
 @media (min-width: 1024px) {
@@ -348,7 +330,7 @@
   }
 
   .header__description-block {
-    min-inline-size: 49%;
+    min-inline-size: 50%;
   }
 
   .header__description {
@@ -371,6 +353,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
 }

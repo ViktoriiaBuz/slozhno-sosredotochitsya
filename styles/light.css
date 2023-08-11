@@ -63,22 +63,12 @@
   border-block-end: 1px solid var(--title-color, #353430);
 }
 
-.theme_light .header::before {
+.theme_light .decorated-zone::before {
   border-block-start: 1px solid var(--title-color, #353430);
   border-inline-end: 1px solid var(--title-color, #353430);
 }
 
-.theme_light .header::after {
-  border-block-end: 1px solid var(--title-color, #353430);
-  border-inline-start: 1px solid var(--title-color, #353430);
-}
-
-.theme_light .footer::before {
-  border-block-start: 1px solid var(--title-color, #353430);
-  border-inline-end: 1px solid var(--title-color, #353430);
-}
-
-.theme_light .footer::after {
+.theme_light .decorated-zone::after {
   border-block-end: 1px solid var(--title-color, #353430);
   border-inline-start: 1px solid var(--title-color, #353430);
 }
