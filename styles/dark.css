@@ -19,7 +19,7 @@
   */
 }
 
-@media (prefers-color-scheme: dark) {
+/*@media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #000028;
     --accent-title-color: #db00ff;
@@ -36,7 +36,6 @@
   }
 
   .header__theme-menu-button_active {
-    pointer-events: none;
     border: 1px solid var(--accent-color, #ff0070);
   }
 
@@ -65,9 +64,4 @@
     border-block-end: 1px solid var(--accent-color, #ff0070);
     border-inline-start: 1px solid var(--accent-color, #ff0070);
   }
-}
-
-/*.header__theme-menu-button_active {
-  pointer-events: none;
-  border: 1px solid var(--accent-color, #ff0070);
 }*/

@@ -85,6 +85,10 @@
   gap: 13px;
 }
 
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
 .header__theme-menu-button {
   padding: 1px 13px;
   background-color: transparent;
@@ -186,6 +190,7 @@
 .section__img {
   display: grid;
   gap: 10px;
+  margin-block-end: 40px;
 }
 
 .section__img img {
@@ -302,6 +307,10 @@
     grid-row: 3 / 4;
     grid-column: 2 / 4;
   }
+
+  .section-img {
+    margin-block-end: 60px;
+  }
   
 }
 
@@ -349,10 +358,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-  }
-
-  .section-img {
-    margin-block-end: 60px;
   }
 
   .footer__title {
