@@ -18,9 +18,7 @@
   --color-text: #353430;
   --main-font: 400;
   --accent-font: 700;
-}
 
-.page.theme_light {
   background-image: url(../images/cover-image-light.png);
 }
 
